@@ -1,0 +1,16 @@
+--- start ---
+
+As the owner I want to be able to fill the machine with water because it is required for making coffee.
+As the owner I want to be able to fill the machine with milk because it is required for making coffee.
+As the owner I want to be able to fill the machine with coffee beans because it is required for making coffee.
+As the owner I want to be able to fill the machine with cups because it is required for holding the coffee.
+
+As the owner I want to be able to see how much ingredients is in the machine because I need to know if I need to fill it or not.
+As the owner I want the machine to NOT make any coffee if there isn't enough ingredients of any of them because this machine only makes high quality coffee.
+
+
+As a customer I want to be able to order a Espresso because I like Espresso.
+As a customer I want to be able to order a Black coffee because I like ordinary black coffee.
+As a customer I want to be able to order a Latte because I like a more "milkier" coffee.
+
+--- end ---
