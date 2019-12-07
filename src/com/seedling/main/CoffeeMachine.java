@@ -2,9 +2,9 @@ package com.seedling.main;
 
 public class CoffeeMachine {
 
-    int water;
-    int milk;
-    int beans;
+    int water = 0;
+    int milk = 0;
+    int beans = 0;
 
     public CoffeeMachine() {
     }
@@ -20,7 +20,7 @@ public class CoffeeMachine {
     }
 
     public void setWater(int water) {
-        if (getWater() - water < 0) {
+        if (water < 0) {
             water = 0;
         }
 
@@ -32,7 +32,7 @@ public class CoffeeMachine {
     }
 
     public void setMilk(int milk) {
-        if (getMilk() - milk < 0) {
+        if (milk < 0) {
             milk = 0;
         }
 
@@ -44,7 +44,7 @@ public class CoffeeMachine {
     }
 
     public void setBeans(int beans) {
-        if (getBeans() - beans < 0) {
+        if (beans < 0) {
             beans = 0;
         }
 
