@@ -9,6 +9,12 @@ public class CoffeeMachine {
     public CoffeeMachine() {
     }
 
+    public CoffeeMachine(int water, int milk, int beans) {
+        this.water = water;
+        this.milk = milk;
+        this.beans = beans;
+    }
+
     public int getWater() {
         return water;
     }
