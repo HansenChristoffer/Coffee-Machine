@@ -20,6 +20,10 @@ public class CoffeeMachine {
     }
 
     public void setWater(int water) {
+        if (getWater() - water < 0) {
+            water = 0;
+        }
+
         this.water = water;
     }
 
@@ -28,6 +32,10 @@ public class CoffeeMachine {
     }
 
     public void setMilk(int milk) {
+        if (getMilk() - milk < 0) {
+            milk = 0;
+        }
+
         this.milk = milk;
     }
 
@@ -36,6 +44,10 @@ public class CoffeeMachine {
     }
 
     public void setBeans(int beans) {
+        if (getBeans() - beans < 0) {
+            beans = 0;
+        }
+
         this.beans = beans;
     }
 
