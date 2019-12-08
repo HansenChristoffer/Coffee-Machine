@@ -28,7 +28,7 @@ public class Logic {
                     break;
                 }
                 case 2: {
-                    System.out.printf("Current ingredients in the machine:%nWater: %dml%nMilk: %dml%nBeans: %dg",
+                    System.out.printf("%nCurrent ingredients in the machine:%nWater: %d ml%nMilk: %d ml%nBeans: %d g%n%n",
                             coffeeMachine.getWater(), coffeeMachine.getMilk(), coffeeMachine.getBeans());
                     break;
                 }
@@ -62,15 +62,15 @@ public class Logic {
                 }
                 case 1: {
                     buyBlackCoffee();
-                    break;
+                    break OUTER;
                 }
                 case 2: {
                     buyEspresso();
-                    break;
+                    break OUTER;
                 }
                 case 3: {
                     buyLatte();
-                    break;
+                    break OUTER;
                 }
                 default: {
                     System.out.println("$> No such choice!");
@@ -87,25 +87,48 @@ public class Logic {
         } else if (blackCoffeeRecipe[2] > coffeeMachine.getBeans()) {
             System.out.println("$> Not enough beans in the machine. Please fill it up!");
         } else {
-            System.out.println("$> One Black coffee made.\nYou're welcome!");
+            System.out.println("$> One Black coffee made. You're welcome!\n");
 
-            coffeeMachine.setWater(-blackCoffeeRecipe[0]);
-            coffeeMachine.setBeans(-blackCoffeeRecipe[2]);
+            coffeeMachine.setWater(coffeeMachine.getWater()-blackCoffeeRecipe[0]);
+            coffeeMachine.setBeans(coffeeMachine.getBeans()-blackCoffeeRecipe[2]);
 
         }
     }
 
     private void buyEspresso() {
+        if (espressoRecipe[0] > coffeeMachine.getWater()) {
+            System.out.println("$> Not enough water in the machine. Please fill it up!");
+        } else if (espressoRecipe[2] > coffeeMachine.getBeans()) {
+            System.out.println("$> Not enough beans in the machine. Please fill it up!");
+        } else {
+            System.out.println("$> One Espresso made. You're welcome!\n");
 
+            coffeeMachine.setWater(coffeeMachine.getWater()-espressoRecipe[0]);
+            coffeeMachine.setBeans(coffeeMachine.getBeans()-espressoRecipe[2]);
+
+        }
     }
 
     private void buyLatte() {
+        if (latteRecipe[0] > coffeeMachine.getWater()) {
+            System.out.println("$> Not enough water in the machine. Please fill it up!");
+        } else if (latteRecipe[1] > coffeeMachine.getMilk()) {
+            System.out.println("$> Not enough milk in the machine. Please fill it up!");
+        } else if (latteRecipe[2] > coffeeMachine.getBeans()) {
+            System.out.println("$> Not enough beans in the machine. Please fill it up!");
+        } else {
+            System.out.println("$> One Latte made. You're welcome!\n");
 
+            coffeeMachine.setWater(coffeeMachine.getWater()-latteRecipe[0]);
+            coffeeMachine.setWater(coffeeMachine.getWater()-latteRecipe[0]);
+            coffeeMachine.setBeans(coffeeMachine.getBeans()-latteRecipe[2]);
+
+        }
     }
 
 
     private void fillMenu() {
-        System.out.println("[Fill menu]\n");
+        System.out.println("\n[Fill menu]");
 
         System.out.print("How much water (ml):\n> ");
         coffeeMachine.setWater(in.nextInt());
